@@ -1,8 +1,20 @@
 'use client';
 
-import "../styles/globals.css";
-import Link from "next/link";
+/**
+ * Root Layout
+ * 
+ * This component serves as the base layout for the application. It wraps all pages with:
+ * - A consistent global style.
+ * - The `Navbar` component for navigation.
+ * - A `main` section to display child components (dynamic content).
+ * 
+ * Features:
+ * - Mobile responsiveness.
+ * - Clean and modular structure by separating navigation into its own component.
+ */
 
+import "../styles/globals.css";
+import Navbar from "../components/Navbar";
 
 export default function RootLayout({
   children,
@@ -12,23 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-100 text-gray-900">
-        
-          <nav className="bg-blue-950 text-white py-4 px-8 flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold">
-              Bulltech Simple Auth
-            </Link>
-            <div>
-              <Link
-                href="/login"
-                className="text-white font-semibold bg-blue-500 py-2 px-4 rounded-full shadow-lg hover:text-blue-100 hover:bg-blue-700 hover:font-semibold hover:shadow-md"
-              >
-                Sign In
-              </Link>
-            </div>
-          </nav>
-        
+        <Navbar />
         <main>{children}</main>
       </body>
     </html>
   );
 }
+
