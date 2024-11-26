@@ -1,9 +1,16 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import { useRouter } from 'next/navigation';
 
 const Report = () => {
-  const [color, setColor] = useState("#4bc0c0"); // Initial color (blue)
+  const router = useRouter();
+  const [color, setColor] = useState("#4bc0c0"); 
+  
+  useEffect(() => {
+    const auth = localStorage.getItem("auth");
+    if (!auth) router.push("/login");
+  }, [router]);
 
   /**
    * Handles the color change based on the slider value.

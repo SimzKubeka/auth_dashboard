@@ -1,3 +1,5 @@
+"use client"
+
 /**
  * UserDetails Component
  *
@@ -7,7 +9,18 @@
  * - Notification preferences
  */
 
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function UserDetails() {
+  // Add router and authentication check
+  const router = useRouter();
+  
+  useEffect(() => {
+    const auth = localStorage.getItem("auth");
+    if (!auth) router.push("/login");
+  }, [router]);
+  
   return (
     <div className="p-6 max-h-screen">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow">
