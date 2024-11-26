@@ -1,16 +1,34 @@
+/**
+ * Landing Page
+ * 
+ * This page serves as the main entry point for the application. It includes:
+ * - Hero section: Welcomes users and provides a prominent call-to-action.
+ * - About Us section: Describes the purpose of the application.
+ * - Services section: Highlights key services or features offered.
+ * - Partners section: Showcases notable partners or collaborators.
+ * 
+ * Features:
+ * - Fully responsive layout.
+ * - Clear separation of sections for easy readability and future enhancements.
+ */
+
+import HeroSection from "../components/HeroSection";
+import AboutUsSection from "../components/AboutUsSection";
+import ServicesSection from "../components/ServicesSection";
+import PartnersSection from "../components/PartnersSection";
+import { ABOUT_US_TEXT } from "@/lib/common";
+
+
 export default function LandingPage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center">
-      <h1 className="text-4xl font-bold mb-6">Welcome to My App</h1>
-      <p className="text-lg text-gray-600 mb-4">
-        A modern analytics dashboard for your business.
-      </p>
-      <a
-        href="/login"
-        className="bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600"
-      >
-        Get Started
-      </a>
+    <div className="w-full bg-slate-50">
+      <HeroSection />
+      <AboutUsSection
+        text={ABOUT_US_TEXT}
+      />
+      <ServicesSection />
+      <PartnersSection />
     </div>
   );
 }
+
