@@ -1,12 +1,29 @@
+/**
+ * LoginPage Component
+ *
+ * This component renders the login page for the application.
+ * - Displays a login form with inputs for email and password.
+ * - Includes a background image and a styled form container for an enhanced user interface.
+ * - Provides validation for user credentials and redirects to the dashboard upon successful login.
+ *
+ * Features:
+ * - Email and password inputs with styled borders and placeholders.
+ * - Error message display for invalid login attempts.
+ * - Remember me checkbox and "Forgot password" link.
+ * - Sign-up and reCAPTCHA informational links.
+ * - Responsive layout with a dark theme and translucent background.
+ *
+ * Behavior:
+ * - If the user enters the correct credentials, they are redirected to the dashboard.
+ * - Invalid credentials display an error message.
+ * - Authentication status is stored in localStorage.
+ */
+
 'use client';
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
-const validCredentials = {
-  email: "test@bulltechgroup.co.za",
-  password: "tPA%G%5FZap^V&p$",
-};
+import { VALID_CREDENTIALS } from "../../lib/common";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -14,9 +31,18 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const router = useRouter();
 
+  /**
+   * handleLogin Function
+   *
+   * Validates user credentials and redirects to the dashboard upon success.
+   * - Stores authentication status in localStorage for session persistence.
+   * - Displays an error message for invalid credentials.
+   *
+   * @param {React.FormEvent} e - The form submission event.
+   */
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email === validCredentials.email && password === validCredentials.password) {
+    if (email === VALID_CREDENTIALS.email && password === VALID_CREDENTIALS.password) {
       localStorage.setItem("auth", "true");
       router.replace("/dashboard");
       router.refresh();

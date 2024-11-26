@@ -21,7 +21,7 @@ import { ABOUT_US_TEXT } from "@/lib/common";
 
 export default function LandingPage() {
   return (
-    <div className="w-full">
+    <div className="w-full bg-slate-50">
       <HeroSection />
       <AboutUsSection
         text={ABOUT_US_TEXT}

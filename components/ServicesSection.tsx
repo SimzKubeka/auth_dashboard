@@ -16,7 +16,7 @@ export default function ServicesSection() {
   <section className="py-20 px-6 bg-blue-50 text-gray-900 text-center">
    <h2 className="text-4xl font-bold mb-4">
     A Few Of Our{" "}
-    <span className="text-blue-950">
+    <span className="text-[#4bc0c0]">
       Services
     </span>
    </h2>

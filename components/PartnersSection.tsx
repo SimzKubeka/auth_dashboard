@@ -12,10 +12,10 @@ import { PARTNER_IMAGES } from "../lib/common";
 
 export default function PartnersSection() {
  return (
-  <section className="py-20 px-6 bg-white text-center">
+  <section className="py-20 px-6 text-center">
    <h2 className="text-4xl font-bold mb-4">
     We Even Have Some{" "}
-    <span className="text-blue-950">
+    <span className="text-[#4bc0c0]">
      Global Partners
     </span>
    </h2>

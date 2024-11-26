@@ -51,7 +51,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
    >
     <h2 className="text-4xl font-bold mb-4">
      A Little Something{" "}
-     <span className="text-blue-950">
+     <span className="text-[#4bc0c0]">
       About Us
      </span>
     </h2>

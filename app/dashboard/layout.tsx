@@ -14,11 +14,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   }, [router]);
   return (
     <div className="flex h-screen">
-      <Sidebar
-        username="John Doe"
-        email="john.doe@example.com"
-      />
-      <main className="flex-1 bg-gray-100 p-6 overflow-auto">{children}</main>
+      <Sidebar/>
+      <main className="flex-1 bg-blue-50 p-6 overflow-auto">{children}</main>
     </div>
   );
 }
